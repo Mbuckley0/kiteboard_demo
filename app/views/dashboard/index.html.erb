@@ -1,0 +1,36 @@
+<style>
+  body {
+    background-color: #ffffff;
+  }
+</style>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" id="welcome" data-widget="Text">
+      <%= render 'kiteboard/text', {title: 'This is a shiny new dashboard', text: 'Hello', more_info: ''} %>
+    </li>
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" id="clock" data-widget="Clock">
+      <%= render 'kiteboard/clock' %>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" id="total-kite-amount" data-widget="Number">
+      <%= render 'kiteboard/number', {title: 'Total Number of Kites'} %>
+    </li>
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1" id="total-red-kite-amount" data-widget="Meter">
+      <%= render 'kiteboard/meter', {title: 'Total Number of Red Kites', min: 0, max: 200} %>
+    </li>
+    <li data-row="2" data-col="3" data-sizex="2" data-sizey="1" id="kites-by-color" data-widget="List">
+      <%= render 'kiteboard/list', {title: 'Kites By Colour'} %>
+    </li>
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" id="kites-temperature" data-widget="Temperature">
+      <%= render 'kiteboard/temperature', {title: 'Temperature Widget', min: 175, max: 225} %>
+    </li>
+  </ul>
+</div>
+
+<script>
+  $(function () {
+    Kiteboard.init();
+    Dashboard.init();
+    Dashboard.getData();
+  });
+</script>

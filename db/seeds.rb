@@ -11,7 +11,7 @@ Kite.destroy_all
 def random_color
   i = rand(20)
   case i
-    when 1,2,3,4,5
+    when 0,1,2,3,4,5
       "Red"
     when 6,7,8
       "Blue"
@@ -31,7 +31,7 @@ end
 def random_size
   i = rand(10)
   case i
-    when 1, 2, 3
+    when 0, 1, 2, 3
       50
     when 4, 5
       75
@@ -45,7 +45,7 @@ end
 def random_material
   i = rand(10)
   case i
-    when 1,2,3,4,5,6
+    when 0,1,2,3,4,5,6
       "Plastic"
     when 7,8,9,10
       "Cloth"
