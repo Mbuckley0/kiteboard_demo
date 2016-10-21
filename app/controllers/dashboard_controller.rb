@@ -1,29 +1,20 @@
 class DashboardController < ApplicationController
   def index
-    kites = Kite.all
+    kites_list = Kite.group(:color).count
+    kites_list.map do |kite|
+      kites_list[kite[0]] = rand(1..100)
+    end
 
     respond_to do |format|
       format.html
       format.json do
-        render json: { 'welcome' => "There are currently #{kites.count} Kites",
-                       'total-kite-amount' => kites.count,
-                       'total-red-kite-amount' => kites.where(color: 'Red').count,
-                       'kites-by-color' => kites_by_color,
-                       'kites-temperature' => kites.count}
+        render json: { 'welcome' => "There are currently #{rand(1..100)} Kites",
+                       'total-kite-amount' => rand(1..100),
+                       'total-red-kite-amount' => rand(1..100),
+                       'kites-by-color' => kites_list,
+                       'kites-temperature' => rand(1..250),
+                       'kites-graph' => rand(1..100)}
       end
     end
-  end
-
-  private
-
-  def kites_by_color
-    kites_by_color = Kite.group(:color).count
-
-    array = []
-    kites_by_color.each do |k, v|
-      array.push(label: k,
-                 value: v)
-    end
-    array
   end
 end

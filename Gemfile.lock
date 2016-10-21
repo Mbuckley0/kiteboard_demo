@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Mbuckley0/kiteboard.git
-  revision: fc76bb3c0277ab8f306a2a631baa8e17e6ba81a8
+  revision: 0e4e5e143c1924dc97f5220f2c7824f451e91e01
   branch: master
   specs:
     kiteboard (0.1.0)
@@ -180,4 +180,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.12.5
+   1.13.2
